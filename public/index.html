@@ -4,236 +4,788 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Trevor Henry Chiboora — Security Engineer</title>
-  <meta name="description" content="Security Engineer focused on VAPT, SOC (Elastic/MISP), and automation. Newark, NJ · Open to Security Engineer, SOC Analyst, and VAPT roles." />
+  <meta name="description" content="Trevor Henry Chiboora is a Security Engineer focused on detection engineering, SOC operations, VAPT, security automation, and practical cyber defense." />
+  <meta name="theme-color" content="#081018" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🛡️</text></svg>">
 
   <style>
     :root{
-      --bg:#0b0e11; --text:#e8f0ec; --muted:#a8b7b1;
-      --card:#101418; --edge:#1b242a; --brand:#59d49c; --brand-2:#3aa3ff;
-      --maxw:960px; --r:14px; --shadow:0 10px 28px rgba(0,0,0,.25);
-      --gap:clamp(16px,4vw,28px);
-    }
-    @media (prefers-color-scheme:light){
-      :root{ --bg:#fbfdfc; --text:#0e1714; --muted:#4a5b55; --card:#ffffff; --edge:#e6eeea; --shadow:0 6px 20px rgba(0,0,0,.06); }
+      --bg:#081018;
+      --bg-soft:#0d1722;
+      --surface:#0f1b28;
+      --surface-2:#122131;
+      --text:#edf7f3;
+      --muted:#9cb0b9;
+      --line:#1d3142;
+      --brand:#5ce0a6;
+      --brand-2:#4ea1ff;
+      --accent:#8dffcf;
+      --shadow:0 18px 48px rgba(0,0,0,.34);
+      --shadow-soft:0 10px 28px rgba(0,0,0,.22);
+      --radius:20px;
+      --radius-sm:14px;
+      --max:1140px;
     }
 
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--text);
-      font:16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-    img{max-width:100%;display:block}
-    a{color:var(--brand);text-decoration:none}
-    a:hover,a:focus-visible{text-decoration:underline}
-    .container{max-width:var(--maxw);margin:0 auto;padding:0 16px}
-
-    /* Static, slim header */
-    header{position:static;background:var(--bg);border-bottom:1px solid var(--edge);z-index:10}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
-    .brand{display:flex;align-items:center;gap:8px}
-    .logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:var(--shadow)}
-    .brand h1{font-size:15px;margin:0;font-weight:600}
-    .links{display:flex;gap:8px;flex-wrap:wrap}
-    .chip{border:1px solid var(--edge);border-radius:999px;padding:6px 10px;background:var(--card);color:var(--muted);font-size:14px}
-    .chip:hover{color:var(--text)}
-    .menu{display:none}
-    @media (max-width:720px){
-      .links{display:none}
-      .menu{display:inline-flex;border:1px solid var(--edge);background:var(--card);border-radius:8px;padding:6px 8px;font-size:14px}
-      #topnav[aria-expanded="true"] .links{
-        display:flex;flex-direction:column;gap:6px;position:absolute;left:0;right:0;top:44px;
-        background:var(--card);padding:8px 16px;border-bottom:1px solid var(--edge)
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f5faf8;
+        --bg-soft:#edf5f1;
+        --surface:#ffffff;
+        --surface-2:#f7fbf9;
+        --text:#0d1716;
+        --muted:#5f7278;
+        --line:#dce8e7;
+        --shadow:0 18px 40px rgba(10,20,30,.08);
+        --shadow-soft:0 8px 20px rgba(10,20,30,.06);
       }
     }
 
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--gap);align-items:center;padding:24px 0}
-    .title{font-size:clamp(24px,4vw,36px);line-height:1.2;margin:0 0 8px}
-    .subtitle{color:var(--muted);margin:0 0 12px}
-    .kpi{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
-    .badge{border:1px dashed var(--edge);border-radius:8px;padding:4px 8px;color:var(--muted);font-size:13px}
-    .panel{background:var(--card);border:1px solid var(--edge);border-radius:var(--r);box-shadow:var(--shadow)}
-    .terminal{padding:14px}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(92,224,166,.14), transparent 28%),
+        radial-gradient(circle at 100% 10%, rgba(78,161,255,.14), transparent 26%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      font:16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
 
-    /* Sections & cards */
-    section{padding:24px 0}
-    section>h2{font-size:18px;color:var(--muted);margin:0 0 12px}
-    .grid{display:grid;gap:14px}
-    .grid.cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-    .card{padding:14px}
-    .card h3{margin:2px 0 6px;font-size:17px}
+    a{color:var(--brand);text-decoration:none}
+    a:hover,a:focus-visible{text-decoration:underline}
+    img{max-width:100%;display:block}
+    button{font:inherit}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+    .muted{color:var(--muted)}
+    .section{padding:34px 0}
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-soft);
+      backdrop-filter:blur(8px);
+    }
+    .grid{display:grid;gap:18px}
+
+    .skip{
+      position:absolute;left:-9999px;top:auto;
+    }
+    .skip:focus{
+      left:16px;top:16px;z-index:200;padding:10px 14px;border-radius:12px;
+      background:var(--surface);border:1px solid var(--line);
+    }
+
+    header{
+      position:sticky;top:0;z-index:100;
+      backdrop-filter:blur(14px);
+      background:color-mix(in srgb, var(--bg) 84%, transparent);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0;position:relative;
+    }
+    .brand{display:flex;gap:12px;align-items:center;min-width:0}
+    .logo{
+      width:38px;height:38px;border-radius:13px;
+      background:linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow:var(--shadow-soft);
+      flex:0 0 auto;
+    }
+    .brand-text{min-width:0}
+    .brand-text strong{display:block;font-size:15px}
+    .brand-text span{display:block;font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .nav-links{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{
+      padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.02);
+      color:var(--muted);font-size:14px;transition:.2s ease;
+    }
+    .chip:hover,.chip:focus-visible{color:var(--text);border-color:color-mix(in srgb, var(--brand) 35%, var(--line));text-decoration:none;transform:translateY(-1px)}
+    .menu{
+      display:none;padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--text);
+    }
+
+    @media (max-width:860px){
+      .menu{display:inline-flex}
+      .nav-links{
+        display:none;position:absolute;left:0;right:0;top:62px;flex-direction:column;background:var(--surface);
+        border:1px solid var(--line);border-radius:18px;padding:12px;box-shadow:var(--shadow);
+      }
+      #topnav[aria-expanded="true"] .nav-links{display:flex}
+      .nav-links a{text-align:center}
+    }
+
+    .hero{
+      padding:64px 0 24px;
+      display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch;
+    }
+    .hero-copy{padding:8px 0}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;border:1px solid var(--line);
+      color:var(--muted);background:rgba(255,255,255,.03);font-size:14px;margin-bottom:16px;
+    }
+    .eyebrow-dot{
+      width:9px;height:9px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 6px rgba(92,224,166,.14);
+    }
+    .hero h1{
+      margin:0 0 14px;font-size:clamp(34px, 6vw, 62px);line-height:1.03;letter-spacing:-.04em;max-width:12ch;
+    }
+    .hero p.lead{
+      margin:0 0 18px;color:var(--muted);font-size:clamp(16px, 2.2vw, 19px);max-width:62ch;
+    }
+    .hero-tags,.stat-tags{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+    .tag{
+      border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:999px;padding:8px 12px;font-size:13px;color:var(--text);
+    }
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      min-height:46px;padding:11px 16px;border-radius:14px;border:1px solid var(--line);
+      background:var(--surface);color:var(--text);font-weight:600;box-shadow:var(--shadow-soft);transition:.2s ease;
+    }
+    .btn:hover,.btn:focus-visible{transform:translateY(-1px);text-decoration:none;border-color:color-mix(in srgb, var(--brand) 42%, var(--line))}
+    .btn.primary{
+      background:linear-gradient(135deg, color-mix(in srgb, var(--brand) 18%, var(--surface)), color-mix(in srgb, var(--brand-2) 18%, var(--surface)));
+    }
+
+    .hero-card{padding:22px;position:relative;overflow:hidden}
+    .hero-card::after{
+      content:"";position:absolute;right:-34px;bottom:-34px;width:180px;height:180px;border-radius:50%;
+      background:radial-gradient(circle, rgba(92,224,166,.18), transparent 68%);
+      pointer-events:none;
+    }
+    .hero-card h2{margin:0 0 8px;font-size:18px}
+    .hero-card p{margin:0;color:var(--muted)}
+    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+    .stat{
+      background:var(--surface-2);border:1px solid var(--line);border-radius:16px;padding:14px;
+    }
+    .stat strong{display:block;font-size:24px;line-height:1.1;margin-bottom:4px}
+    .stat span{display:block;color:var(--muted);font-size:13px}
+
+    @media (max-width:940px){
+      .hero{grid-template-columns:1fr}
+      .hero h1{max-width:none}
+    }
+
+    .section-head{display:flex;align-items:center;gap:14px;margin:0 0 18px}
+    .section-head h2{margin:0;font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+    .section-head .line{height:1px;flex:1;background:linear-gradient(90deg, var(--line), transparent)}
+
+    .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .card{padding:20px}
+    .card h3{margin:0 0 10px;font-size:19px}
     .card p{margin:0;color:var(--muted)}
-    .meta{color:var(--muted);font-size:13px}
+    .checklist{margin:0;padding-left:18px;color:var(--muted)}
+    .checklist li+li{margin-top:8px}
+    @media (max-width:880px){.about-grid{grid-template-columns:1fr}}
 
-    /* Footer & buttons */
-    footer{border-top:1px solid var(--edge);margin-top:20px;padding:10px 0}
-    .row{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    .btn{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--edge);border-radius:8px;padding:6px 10px;background:var(--card);color:var(--text);font-size:14px}
-    .btn:hover{border-color:var(--brand)}
+    .skill-cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+
+    .timeline{display:grid;gap:16px}
+    .timeline-item{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:20px}
+    .timeline-date{font-size:14px;color:var(--muted);white-space:nowrap}
+    .timeline-item h3{margin:0 0 6px;font-size:19px}
+    .timeline-item .role-meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+    .timeline-item ul{margin:0;padding-left:18px;color:var(--muted)}
+    .timeline-item li+li{margin-top:8px}
+    @media (max-width:760px){.timeline-item{grid-template-columns:1fr}.timeline-date{white-space:normal}}
+
+    .project-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .project{padding:20px;display:flex;flex-direction:column;gap:12px;min-height:100%}
+    .project-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .project h3{margin:0;font-size:20px}
+    .pill{padding:6px 10px;border-radius:999px;border:1px solid var(--line);font-size:12px;color:var(--muted);background:var(--surface-2);white-space:nowrap}
+    .project p{margin:0;color:var(--muted)}
+    .project .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:6px}
+
+    .feature{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:18px;
+    }
+    .feature .visual{
+      min-height:320px;padding:20px;position:relative;overflow:hidden;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(92,224,166,.18), transparent 28%),
+        radial-gradient(circle at 80% 0%, rgba(78,161,255,.16), transparent 26%),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+    }
+    .mini-arch{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .node{padding:14px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.04);text-align:center}
+    .node strong{display:block;font-size:14px}
+    .node span{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+    @media (max-width:900px){.feature{grid-template-columns:1fr}}
+
+    .simple-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+
+    .contact{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
+    .contact-list{display:grid;gap:12px;margin-top:12px}
+    .contact-item{display:flex;gap:12px;padding:14px;border-radius:16px;border:1px solid var(--line);background:var(--surface-2)}
+    .contact-item strong{display:block;font-size:14px;margin-bottom:4px}
+    .contact-item span,.contact-item a{color:var(--muted);word-break:break-word}
+    @media (max-width:900px){.contact{grid-template-columns:1fr}}
+
+    footer{border-top:1px solid var(--line);padding:20px 0 28px;margin-top:24px}
+    .footer-row{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease, transform .55s ease}
+    .reveal.show{opacity:1;transform:none}
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .reveal,.reveal.show{opacity:1;transform:none;transition:none}
+    }
   </style>
 </head>
-
 <body>
-  <!-- anchor for back-to-top -->
+  <a href="#main" class="skip">Skip to content</a>
+
   <header id="top">
-    <div class="container nav" role="navigation" aria-label="Primary" id="topnav" aria-expanded="false">
+    <div class="container nav" id="topnav" aria-expanded="false">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
-        <h1>Trevor Henry Chiboora</h1>
+        <div class="brand-text">
+          <strong>Trevor Henry Chiboora</strong>
+          <span>Security Engineer · Detection · SOC · VAPT</span>
+        </div>
       </div>
-      <nav class="links">
+
+      <nav class="nav-links" aria-label="Primary navigation">
         <a class="chip" href="#about">About</a>
         <a class="chip" href="#skills">Skills</a>
         <a class="chip" href="#experience">Experience</a>
+        <a class="chip" href="#featured">Featured Lab</a>
+        <a class="chip" href="#screenshots">Screenshots</a>
+        <a class="chip" href="#repos">Repos</a>
         <a class="chip" href="#projects">Projects</a>
         <a class="chip" href="#education">Education</a>
-        <a class="chip" href="#certs">Certs</a>
         <a class="chip" href="#contact">Contact</a>
       </nav>
-      <button class="menu" aria-controls="topnav" aria-expanded="false" id="menubtn">Menu</button>
+
+      <button class="menu" id="menubtn" aria-controls="topnav" aria-expanded="false">Menu</button>
     </div>
   </header>
 
-  <main id="main" class="container" tabindex="-1">
+  <main id="main" class="container">
     <section class="hero">
-      <div>
-        <p class="subtitle">Security Engineering · VAPT · SOC Analyst · GRC</p>
-        <h2 class="title">Security Engineer focused on building resilient systems and detecting threats.</h2>
-        <p class="subtitle">Open to Security Engineer, SOC Analyst, and VAPT roles · Newark, NJ · Remote OK</p>
-        <div class="kpi">
-          <span class="badge">VAPT</span>
-          <span class="badge">SOC (Elastic/MISP)</span>
-          <span class="badge">Automation (Python/Bash)</span>
-          <span class="badge">Mobile & Web Security</span>
+      <div class="hero-copy reveal">
+        <div class="eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          Open to Security Engineer, SOC Analyst, Detection Engineering, and VAPT roles
         </div>
-        <p style="margin-top:14px">
-          <a class="btn" href="#projects">View Projects</a>
-          <a class="btn" href="assets/Trevor_H_Chiboora_Resume.pdf" download>Download Resume</a>
+        <h1>I build security labs, detections, and automations that improve real defenses.</h1>
+        <p class="lead">
+          I am Trevor Henry Chiboora, a cybersecurity engineer focused on SOC operations, detection engineering,
+          vulnerability assessment, security research, and automation. I like turning security work into systems that are practical,
+          measurable, and useful to defenders.
         </p>
+        <div class="hero-tags" aria-label="Core specialties">
+          <span class="tag">Detection Engineering</span>
+          <span class="tag">SOC Operations</span>
+          <span class="tag">VAPT</span>
+          <span class="tag">Threat Monitoring</span>
+          <span class="tag">Python & Bash</span>
+          <span class="tag">Mobile & Web Security</span>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="#featured">View Featured Lab</a>
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="btn" href="assets/Trevor_H_Chiboora_Resume.pdf" download>Download Resume</a>
+        </div>
       </div>
-      <aside class="panel terminal" aria-label="Highlights">
-        <p class="meta">Highlights</p>
-        <ul>
-          <li>Deployed SOC with Elastic + MISP and custom pipelines.</li>
-          <li>Analyzed 200+ Android apps; published security research.</li>
-          <li>Built a full Attack & Detect lab (AD, pfSense, Security Onion).</li>
-        </ul>
+
+      <aside class="panel hero-card reveal" aria-label="Highlights">
+        <h2>Security Profile</h2>
+        <p>Hands-on experience across research, monitoring, offensive validation, and security tooling.</p>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>200+</strong>
+            <span>Android apps analyzed for security research</span>
+          </div>
+          <div class="stat">
+            <strong>500+</strong>
+            <span>Users supported in enterprise IT operations</span>
+          </div>
+          <div class="stat">
+            <strong>SOC</strong>
+            <span>Elastic and MISP-based monitoring workflows</span>
+          </div>
+          <div class="stat">
+            <strong>Labs</strong>
+            <span>Attack, detect, harden, and document environments</span>
+          </div>
+        </div>
+
+        <div class="stat-tags">
+          <span class="tag">Elastic</span>
+          <span class="tag">Security Onion</span>
+          <span class="tag">Suricata</span>
+          <span class="tag">Zeek</span>
+          <span class="tag">MISP</span>
+          <span class="tag">Proxmox</span>
+        </div>
       </aside>
     </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <div class="panel card">
-        <p>
-          Security researcher & engineer with 2+ years across security monitoring, DFIR/malware triage, scripting, vulnerability assessment, and penetration testing. I enjoy building clean automations and practical detections that reduce noise and catch real attacks.
-        </p>
+    <section id="about" class="section reveal">
+      <div class="section-head">
+        <h2>About</h2><div class="line"></div>
       </div>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="grid cards">
-        <div class="panel card"><h3>Operations</h3><p>SOC Monitoring, Incident Response, Malware Analysis, VAPT, Honeypots</p></div>
-        <div class="panel card"><h3>Engineering</h3><p>Active Directory, pfSense, Proxmox, Firewalls, System Hardening</p></div>
-        <div class="panel card"><h3>Tooling</h3><p>Elastic Security, Security Onion, Suricata, Zeek, MISP, Burp Suite, Nmap, Nuclei</p></div>
-        <div class="panel card"><h3>Scripting</h3><p>Python & Bash for scan orchestration, enrichment, reporting</p></div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="grid cards">
+      <div class="about-grid">
         <article class="panel card">
-          <h3>Research Associate — Upanzi Network / CyLab-Africa</h3>
-          <p>Automated security tests (Python/Bash). Deployed SOC (Elastic + MISP). Analyzed 200+ Android apps and published findings. Authored Africa-focused security research.</p>
-          <p class="meta">Jan 2023 – Aug 2025 · Kigali → Newark</p>
+          <h3>Security work with both offensive and defensive depth</h3>
+          <p>
+            My work spans vulnerability assessment, SOC analysis, threat monitoring, security research,
+            malware triage, and automation. I am especially interested in building security environments that let me
+            test assumptions, validate detections, understand attacker behavior, and improve defensive response.
+          </p>
         </article>
-        <article class="panel card">
-          <h3>Teaching Assistant — Harare Institute of Technology</h3>
-          <p>Prepared assignments & labs; supervised projects (Distinctions); coordinated exams.</p>
-          <p class="meta">Mar 2019 – Jun 2021</p>
-        </article>
-        <article class="panel card">
-          <h3>IT Officer — ZIMASCO Pvt. Ltd.</h3>
-          <p>Tier II IT/security support for 500+ users; network troubleshooting; endpoint hardening; audits.</p>
-          <p class="meta">Sep 2017 – Jul 2018</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="grid cards">
-        <article class="panel card">
-          <h3>Honeynet Deployment (AfricaCERT)</h3>
-          <p>Designed and deployed honeynets capturing real-world attacker activity and producing actionable intel. Recognized by AfricaCERT.</p>
-          <p class="meta"><a href="https://github.com/tchiboor" target="_blank" rel="noopener">code & notes →</a></p>
-        </article>
-        <article class="panel card">
-          <h3>Attack & Detect Home Lab</h3>
-          <p>Windows/Linux servers, AD, pfSense, Security Onion, Elastic, Suricata, Zeek, and MISP to simulate attacks and practice IR & hardening.</p>
-          <p class="meta"><a href="https://github.com/tchiboor" target="_blank" rel="noopener">architecture →</a></p>
-        </article>
-      </div>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-      <div class="grid cards">
-        <div class="panel card"><h3>MS in Information Technology (MSIT) — Carnegie Mellon University</h3><p>Cybersecurity & Computer Networking.</p><p class="meta">Fall 2021 – Spring 2023</p></div>
-        <div class="panel card"><h3>BTech in Information Technology — Harare Institute of Technology</h3><p>First-Class Honours (Distinction).</p><p class="meta">Aug 2013 – Jun 2017</p></div>
-      </div>
-    </section>
-
-    <section id="certs">
-      <h2>Certifications</h2>
-      <div class="grid cards">
-        <div class="panel card"><h3>Cisco Certified CyberOps Associate</h3><p class="meta">Valid: Oct 2022 – Oct 2025</p></div>
-        <div class="panel card"><h3>ISC2 Certified in Cybersecurity (CC)</h3><p class="meta">Valid: Jul 2023 – Jul 2026</p></div>
-        <div class="panel card"><h3>CompTIA PenTest+</h3><p class="meta">Active</p></div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="grid" style="grid-template-columns:1.2fr .8fr; gap:16px">
-        <div class="panel card">
-          <p>Email: <a href="mailto:chiboorat@gmail.com">chiboorat@gmail.com</a> · Alt: <a href="mailto:thc4@njit.edu">thc4@njit.edu</a></p>
-          <!-- <p>Phone: <a href="tel:+12016161693">+1 201 616 1693</a></p> -->
-          <p>GitHub: <a href="https://github.com/tchiboor" target="_blank" rel="noopener">github.com/tchiboor</a> · LinkedIn: <a href="https://www.linkedin.com/in/tchiboor/" target="_blank" rel="noopener">linkedin.com/in/tchiboor</a></p>
-          <p>Prefer email first. I respond within 24h.</p>
-        </div>
         <aside class="panel card">
-          <h3 style="margin-top:0">Availability</h3>
-          <ul>
-            <li>Short-term VAPT & PoC builds</li>
-            <li>Threat intel integrations (MISP/CAPE/Elastic)</li>
-            <li>SOC dashboards & detections</li>
+          <h3>What I bring</h3>
+          <ul class="checklist">
+            <li>Practical experience across detection, validation, and hardening</li>
+            <li>Strong lab-building mindset with real tooling and documentation</li>
+            <li>Ability to automate repetitive security tasks with Python and Bash</li>
+            <li>Research-informed approach to real security operations</li>
           </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="skills" class="section reveal">
+      <div class="section-head">
+        <h2>Skills</h2><div class="line"></div>
+      </div>
+      <div class="grid skill-cards">
+        <article class="panel card">
+          <h3>Security Operations</h3>
+          <div class="hero-tags">
+            <span class="tag">SOC Monitoring</span>
+            <span class="tag">Incident Response</span>
+            <span class="tag">Alert Triage</span>
+            <span class="tag">Threat Hunting</span>
+            <span class="tag">Malware Analysis</span>
+          </div>
+        </article>
+        <article class="panel card">
+          <h3>Offensive Security</h3>
+          <div class="hero-tags">
+            <span class="tag">VAPT</span>
+            <span class="tag">Web App Testing</span>
+            <span class="tag">Mobile Security</span>
+            <span class="tag">Burp Suite</span>
+            <span class="tag">Nmap</span>
+            <span class="tag">Nuclei</span>
+          </div>
+        </article>
+        <article class="panel card">
+          <h3>Detection & Tooling</h3>
+          <div class="hero-tags">
+            <span class="tag">Elastic Security</span>
+            <span class="tag">Security Onion</span>
+            <span class="tag">Suricata</span>
+            <span class="tag">Zeek</span>
+            <span class="tag">MISP</span>
+            <span class="tag">Honeypots</span>
+          </div>
+        </article>
+        <article class="panel card">
+          <h3>Infrastructure & Automation</h3>
+          <div class="hero-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Bash</span>
+            <span class="tag">Proxmox</span>
+            <span class="tag">pfSense</span>
+            <span class="tag">Active Directory</span>
+            <span class="tag">System Hardening</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section reveal">
+      <div class="section-head">
+        <h2>Experience</h2><div class="line"></div>
+      </div>
+      <div class="timeline">
+        <article class="panel timeline-item">
+          <div class="timeline-date">Jan 2023 – Aug 2025</div>
+          <div>
+            <h3>Research Associate — Upanzi Network / CyLab-Africa</h3>
+            <div class="role-meta">Kigali → Newark</div>
+            <ul>
+              <li>Automated security testing and analysis workflows using Python and Bash to improve repeatability and reduce manual effort.</li>
+              <li>Contributed to SOC-style monitoring using Elastic and MISP for visibility, enrichment, and threat analysis.</li>
+              <li>Analyzed more than 200 Android applications and contributed to research outputs and Africa-focused cybersecurity studies.</li>
+              <li>Worked across security monitoring, validation, documentation, and practical tooling.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="panel timeline-item">
+          <div class="timeline-date">Mar 2019 – Jun 2021</div>
+          <div>
+            <h3>Teaching Assistant — Harare Institute of Technology</h3>
+            <div class="role-meta">Harare, Zimbabwe</div>
+            <ul>
+              <li>Prepared lab exercises, assignments, and technical materials to support student learning.</li>
+              <li>Supervised student projects and supported distinction-level outcomes.</li>
+              <li>Helped coordinate practical sessions, reviews, and assessments.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="panel timeline-item">
+          <div class="timeline-date">Sep 2017 – Jul 2018</div>
+          <div>
+            <h3>IT Officer — ZIMASCO Pvt. Ltd.</h3>
+            <div class="role-meta">Zimbabwe</div>
+            <ul>
+              <li>Provided Tier II IT and endpoint support for more than 500 users.</li>
+              <li>Supported network troubleshooting, endpoint hardening, system administration, and audits.</li>
+              <li>Helped maintain operational stability across enterprise systems.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="featured" class="section reveal">
+      <div class="section-head">
+        <h2>Featured Lab</h2><div class="line"></div>
+      </div>
+      <div class="feature">
+        <article class="panel card visual">
+          <h3 style="margin:0 0 8px;font-size:24px">Attack & Detect Home Lab</h3>
+          <p class="muted" style="margin:0;max-width:60ch;">
+            A hands-on environment for simulating attacks, testing detections, monitoring logs, and validating hardening decisions.
+            Designed to show how offensive actions can be observed and improved from the defensive side.
+          </p>
+
+          <div class="mini-arch" aria-label="Lab architecture preview">
+            <div class="node">
+              <strong>Attack</strong>
+              <span>Kali / test systems</span>
+            </div>
+            <div class="node">
+              <strong>Control</strong>
+              <span>AD · pfSense · Proxmox</span>
+            </div>
+            <div class="node">
+              <strong>Detect</strong>
+              <span>Security Onion · Elastic</span>
+            </div>
+          </div>
+        </article>
+
+        <aside class="panel card">
+          <h3>Why it matters</h3>
+          <ul class="checklist">
+            <li>Built to simulate realistic attack-and-detect workflows</li>
+            <li>Supports Active Directory, network monitoring, threat visibility, and hardening practice</li>
+            <li>Combines pfSense, Security Onion, Elastic, Suricata, Zeek, and MISP</li>
+            <li>Useful for demonstrations, case studies, writeups, and GitHub documentation</li>
+          </ul>
+
+          <div class="cta" style="margin-top:18px">
+            <a class="btn primary" href="https://github.com/tchiboor" target="_blank" rel="noopener">View GitHub</a>
+            <a class="btn" href="#screenshots">See Screenshots</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="screenshots" class="section reveal">
+      <div class="section-head">
+        <h2>Screenshots</h2><div class="line"></div>
+      </div>
+      <div class="grid project-grid">
+        <article class="panel project">
+          <div class="project-top">
+            <h3>Security Dashboard</h3>
+            <span class="pill">Elastic / SOC</span>
+          </div>
+          <a href="assets/screenshots/security-dashboard.png" target="_blank" rel="noopener">
+            <img src="assets/screenshots/security-dashboard.png" alt="Security dashboard screenshot from the SOC environment" style="border-radius:16px;border:1px solid var(--line);background:var(--surface-2);aspect-ratio:16/10;object-fit:cover;">
+          </a>
+          <p>Use this slot for a screenshot of your SOC dashboard, detections, alerts, or Elastic overview.</p>
+        </article>
+
+        <article class="panel project">
+          <div class="project-top">
+            <h3>Lab Architecture</h3>
+            <span class="pill">Diagram</span>
+          </div>
+          <a href="assets/screenshots/lab-architecture.png" target="_blank" rel="noopener">
+            <img src="assets/screenshots/lab-architecture.png" alt="Architecture diagram showing attack, control, and detection components in the home lab" style="border-radius:16px;border:1px solid var(--line);background:var(--surface-2);aspect-ratio:16/10;object-fit:cover;">
+          </a>
+          <p>Add your network or VM architecture diagram here to show the structure of the environment at a glance.</p>
+        </article>
+
+        <article class="panel project">
+          <div class="project-top">
+            <h3>Detection Workflow</h3>
+            <span class="pill">Investigation</span>
+          </div>
+          <a href="assets/screenshots/detection-workflow.png" target="_blank" rel="noopener">
+            <img src="assets/screenshots/detection-workflow.png" alt="Detection workflow or investigation screenshot showing alerts and related telemetry" style="border-radius:16px;border:1px solid var(--line);background:var(--surface-2);aspect-ratio:16/10;object-fit:cover;">
+          </a>
+          <p>Use this for a before-and-after alert view, Suricata/Zeek visibility, or an investigation screenshot.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="repos" class="section reveal">
+      <div class="section-head">
+        <h2>Repositories</h2><div class="line"></div>
+      </div>
+      <div class="grid project-grid">
+        <article class="panel project">
+          <div class="project-top">
+            <h3>Attack & Detect Home Lab Repo</h3>
+            <span class="pill">Featured</span>
+          </div>
+          <p>Repository for your Proxmox-based security lab, architecture notes, screenshots, setup steps, and hardening or detection documentation.</p>
+          <div class="hero-tags">
+            <span class="tag">Proxmox</span>
+            <span class="tag">pfSense</span>
+            <span class="tag">Security Onion</span>
+            <span class="tag">Elastic</span>
+          </div>
+          <div class="links">
+            <a class="btn primary" href="https://github.com/tchiboor" target="_blank" rel="noopener">Open Repo</a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <div class="project-top">
+            <h3>Security Automation Repo</h3>
+            <span class="pill">Python / Bash</span>
+          </div>
+          <p>Repository for automation scripts, scan orchestration, enrichment utilities, and reporting helpers used in your security workflows.</p>
+          <div class="hero-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Bash</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Tooling</span>
+          </div>
+          <div class="links">
+            <a class="btn" href="https://github.com/tchiboor" target="_blank" rel="noopener">Open Repo</a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <div class="project-top">
+            <h3>Research / Mobile Security Repo</h3>
+            <span class="pill">Research</span>
+          </div>
+          <p>Repository for writeups, notes, app analysis findings, and security research artifacts related to Android and broader applied security work.</p>
+          <div class="hero-tags">
+            <span class="tag">Android Security</span>
+            <span class="tag">Research</span>
+            <span class="tag">Writeups</span>
+            <span class="tag">Findings</span>
+          </div>
+          <div class="links">
+            <a class="btn" href="https://github.com/tchiboor" target="_blank" rel="noopener">Open Repo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section reveal">
+      <div class="section-head">
+        <h2>Projects</h2><div class="line"></div>
+      </div>
+      <div class="grid project-grid">
+        <article class="panel project">
+          <div class="project-top">
+            <h3>Honeynet Deployment</h3>
+            <span class="pill">Threat Intel</span>
+          </div>
+          <p>
+            Designed and deployed honeynet infrastructure that captured attacker activity and generated actionable threat intelligence.
+            This work contributed to practical analysis and security awareness.
+          </p>
+          <div class="hero-tags">
+            <span class="tag">Honeypots</span>
+            <span class="tag">Threat Intelligence</span>
+            <span class="tag">Monitoring</span>
+            <span class="tag">Research</span>
+          </div>
+          <div class="links">
+            <a class="btn" href="https://github.com/tchiboor" target="_blank" rel="noopener">Code & Notes</a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <div class="project-top">
+            <h3>Security Automation Scripts</h3>
+            <span class="pill">Automation</span>
+          </div>
+          <p>
+            Built Python and Bash tooling for scan orchestration, enrichment, and reporting to reduce repetitive analyst work and make testing more repeatable.
+          </p>
+          <div class="hero-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Bash</span>
+            <span class="tag">Reporting</span>
+            <span class="tag">Workflow Automation</span>
+          </div>
+          <div class="links">
+            <a class="btn" href="https://github.com/tchiboor" target="_blank" rel="noopener">View Work</a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <div class="project-top">
+            <h3>Android App Security Research</h3>
+            <span class="pill">Research</span>
+          </div>
+          <p>
+            Analyzed over 200 Android applications for security issues, behavioral patterns, and broader ecosystem trends as part of research-focused work.
+          </p>
+          <div class="hero-tags">
+            <span class="tag">Android Security</span>
+            <span class="tag">Static Analysis</span>
+            <span class="tag">Mobile Security</span>
+            <span class="tag">Research</span>
+          </div>
+          <div class="links">
+            <a class="btn" href="https://github.com/tchiboor" target="_blank" rel="noopener">Related Notes</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="section reveal">
+      <div class="section-head">
+        <h2>Education & Certifications</h2><div class="line"></div>
+      </div>
+      <div class="grid simple-grid">
+        <article class="panel card">
+          <h3>MS in Information Technology — Carnegie Mellon University</h3>
+          <p>Cybersecurity and Computer Networking.</p>
+          <p class="muted" style="margin-top:8px">Fall 2021 – Spring 2023</p>
+        </article>
+        <article class="panel card">
+          <h3>BTech in Information Technology — Harare Institute of Technology</h3>
+          <p>First-Class Honours (Distinction).</p>
+          <p class="muted" style="margin-top:8px">Aug 2013 – Jun 2017</p>
+        </article>
+        <article class="panel card">
+          <h3>Certifications</h3>
+          <p>Cisco Certified CyberOps Associate</p>
+          <p>ISC2 Certified in Cybersecurity (CC)</p>
+          <p>CompTIA PenTest+</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section reveal">
+      <div class="section-head">
+        <h2>Contact</h2><div class="line"></div>
+      </div>
+      <div class="contact">
+        <article class="panel card">
+          <h3>Let’s connect</h3>
+          <p>
+            I am open to security engineering, SOC, detection engineering, and VAPT opportunities.
+            If you want to discuss a role, collaboration, or a lab demonstration, email is the best place to start.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <div aria-hidden="true">📧</div>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:chiboorat@gmail.com">chiboorat@gmail.com</a><br>
+                <a href="mailto:thc4@njit.edu">thc4@njit.edu</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div aria-hidden="true">💻</div>
+              <div>
+                <strong>GitHub</strong>
+                <a href="https://github.com/tchiboor" target="_blank" rel="noopener">github.com/tchiboor</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div aria-hidden="true">🔗</div>
+              <div>
+                <strong>LinkedIn</strong>
+                <a href="https://www.linkedin.com/in/tchiboor/" target="_blank" rel="noopener">linkedin.com/in/tchiboor</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div aria-hidden="true">📍</div>
+              <div>
+                <strong>Location</strong>
+                <span>Newark, NJ · Remote OK</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="panel card">
+          <h3>Best ways to strengthen this portfolio next</h3>
+          <ul class="checklist">
+            <li>Replace the screenshot placeholders with your real dashboard, architecture, and investigation images</li>
+            <li>Point each repo card to the exact GitHub repository once you split them out</li>
+            <li>Add a case study page for your attack-and-detect lab</li>
+            <li>Include one or two writeups showing detections or investigations</li>
+          </ul>
+          <div class="cta" style="margin-top:18px">
+            <a class="btn primary" href="mailto:chiboorat@gmail.com">Email Trevor</a>
+            <a class="btn" href="#top">Back to top</a>
+          </div>
         </aside>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container row">
+    <div class="container footer-row">
       <small>© <span id="year"></span> Trevor Henry Chiboora</small>
-      <div class="row"><a class="btn" href="#top">Back to top</a></div>
+      <div class="cta" style="margin:0">
+        <a class="btn" href="#featured">Featured Lab</a>
+      </div>
     </div>
   </footer>
 
   <script>
-    // Mobile menu toggle (small screens)
     const nav = document.getElementById('topnav');
     const btn = document.getElementById('menubtn');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
     btn?.addEventListener('click', () => {
-      const ex = nav.getAttribute('aria-expanded') === 'true';
-      nav.setAttribute('aria-expanded', String(!ex));
-      btn.setAttribute('aria-expanded', String(!ex));
+      const expanded = nav.getAttribute('aria-expanded') === 'true';
+      nav.setAttribute('aria-expanded', String(!expanded));
+      btn.setAttribute('aria-expanded', String(!expanded));
     });
 
-    // Year in footer
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
