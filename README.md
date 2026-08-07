@@ -10,6 +10,6 @@ Security engineer focused on **detection engineering, SOC operations, VAPT, and 
 
 ### Reach me
 
-🌐 [Portfolio](https://tchiboor.com) · 💼 [LinkedIn](https://www.linkedin.com/in/tchiboor/) · 📧 chiboorat@gmail.com
+🌐 [Portfolio](https://tchiboor.onrender.com/) · 💼 [LinkedIn](https://www.linkedin.com/in/tchiboor/) · 📧 chiboorat@gmail.com
 
 *Open to Security Engineer, SOC Analyst, Detection Engineering, and VAPT roles — Newark, NJ · Remote OK*
