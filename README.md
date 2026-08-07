@@ -1,16 +1,15 @@
-# Trevor Henry Chiboora — Portfolio
+# Hi, I'm Trevor Henry Chiboora 🛡️
 
-Static site served from `/public`. No build step. Deployed to Render via `render.yaml`.
+Security engineer focused on **detection engineering, SOC operations, VAPT, and security automation**. Currently pursuing an MS in Cybersecurity & Privacy at NJIT, building on an MSIT from Carnegie Mellon.
 
-## Local preview
-Open `public/index.html` in your browser, or run:
+- 🔭 I build attack-and-detect labs with Proxmox, pfSense, Security Onion, Elastic, Suricata, Zeek, and MISP
+- 📄 Published security research — ACM, IEEE, Approov (mobile app security, privacy, African cyber risk)
+- 🏅 AfricaCERT Recognition Award for honeynet design and deployment
+- 🤖 I automate repetitive security work with Python and Bash
+- 📜 Cisco CyberOps Associate · ISC2 CC · CompTIA PenTest+
 
-    cd public && python3 -m http.server 8080
+### Reach me
 
-## Deploy (Render Blueprint)
-Render Dashboard → New → Blueprint → select this repo → Deploy.
+🌐 [Portfolio](https://tchiboor.com) · 💼 [LinkedIn](https://www.linkedin.com/in/tchiboor/) · 📧 chiboorat@gmail.com
 
-## Structure
-- `public/index.html` — the entire site (HTML + CSS + JS in one file)
-- `public/404.html` — not-found page
-- `public/assets/` — resume PDF; add lab screenshots here when ready
+*Open to Security Engineer, SOC Analyst, Detection Engineering, and VAPT roles — Newark, NJ · Remote OK*
