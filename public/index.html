@@ -670,6 +670,44 @@
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Portfolio section analytics
+   const trackedSections = new Set();
+
+   const analyticsObserver = new IntersectionObserver((entries) => {
+     entries.forEach(entry => {
+       if (
+       entry.isIntersecting &&
+       entry.intersectionRatio >= 0.25 &&
+       !trackedSections.has(entry.target.id)
+    ) {
+      trackedSections.add(entry.target.id);
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'portfolio_section_view', {
+          section_name: entry.target.id
+        });
+      }
+    }
+  });
+}, {
+  threshold: 0.25
+});
+
+document.querySelectorAll(
+  '#about, #skills, #experience, #lab, #research, #projects, #education, #contact'
+).forEach(section => analyticsObserver.observe(section));
+
+document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+  link.addEventListener('click', () => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'contact_click', {
+        contact_method: 'email',
+        link_text: link.textContent.trim()
+      });
+    }
+  });
+});
   </script>
 </body>
 </html>
