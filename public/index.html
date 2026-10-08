@@ -1,713 +1,462 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHYGJ93T7D"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-PHYGJ93T7D');
 </script>
-
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Trevor Henry Chiboora — Security Engineer</title>
-  <meta name="description" content="Trevor Henry Chiboora is a security engineer focused on detection engineering, SOC operations, VAPT, and security automation. Published researcher, AfricaCERT-recognized honeynet builder." />
-  <meta name="theme-color" content="#0a1216" />
-
-  <!-- Open Graph / social preview -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Trevor Henry Chiboora — Security Engineer" />
-  <meta property="og:description" content="Detection engineering, SOC operations, VAPT, and security automation. Published researcher and lab builder." />
-  <meta name="twitter:card" content="summary" />
-
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🛡️</text></svg>">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- Structured data for search engines -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Trevor Henry Chiboora",
-    "jobTitle": "Security Engineer",
-    "email": "mailto:chiboorat@gmail.com",
-    "url": "https://github.com/tchiboor",
-    "sameAs": ["https://github.com/tchiboor", "https://www.linkedin.com/in/tchiboor/"],
-    "address": {"@type": "PostalAddress", "addressLocality": "Newark", "addressRegion": "NJ"},
-    "alumniOf": [
-      {"@type": "CollegeOrUniversity", "name": "New Jersey Institute of Technology"},
-      {"@type": "CollegeOrUniversity", "name": "Carnegie Mellon University Africa"},
-      {"@type": "CollegeOrUniversity", "name": "Harare Institute of Technology"}
-    ],
-    "knowsAbout": ["Detection Engineering", "SOC Operations", "VAPT", "Threat Intelligence", "Security Automation"]
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trevor Henry Chiboora | Security Engineer</title>
+<meta name="description" content="Security engineer working on detection engineering, SOC operations, VAPT and AI-assisted triage. Former Cybersecurity Research Engineer at the Upanzi Network, CMU-Africa. First-author ACM researcher.">
+<meta property="og:title" content="Trevor Henry Chiboora | Security Engineer">
+<meta property="og:description" content="Detection engineering, SOC operations, VAPT, and security testing of AI-assisted triage.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F3F5F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121A21" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314212B'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='15' fill='%23E0A93B' text-anchor='middle'%3ETC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F3F5F7;
+  --surface: #FFFFFF;
+  --ink: #14212B;
+  --muted: #5B6B78;
+  --line: #D3DAE0;
+  --link: #2F6F8F;
+  --signal: #9A6700;
+  --signal-bg: #FBF1DC;
+  --ok: #2E6B4F;
+  --ok-bg: #E2F1E8;
+  --code-bg: #E8EDF1;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121A21; --surface: #18222B; --ink: #E6ECF0; --muted: #93A3B0;
+    --line: #2A3742; --link: #7FB6D3; --signal: #E0A93B; --signal-bg: #2C2414;
+    --ok: #7CC5A0; --ok-bg: #16291F; --code-bg: #1E2A34;
   }
-  </script>
+}
+:root[data-theme="dark"] {
+  --paper: #121A21; --surface: #18222B; --ink: #E6ECF0; --muted: #93A3B0;
+  --line: #2A3742; --link: #7FB6D3; --signal: #E0A93B; --signal-bg: #2C2414;
+  --ok: #7CC5A0; --ok-bg: #16291F; --code-bg: #1E2A34;
+}
 
-  <style>
-    :root{
-      --bg:#0a1216;
-      --bg-soft:#0d171d;
-      --surface:#101b21;
-      --surface-2:#14222a;
-      --text:#e8f1ee;
-      --muted:#8fa6a5;
-      --line:#1e3038;
-      --brand:#3dd6b0;
-      --brand-2:#5fa8e8;
-      --sev-high:#ff6b5e;
-      --sev-med:#e8b14e;
-      --sev-ok:#3dd6b0;
-      --shadow:0 18px 48px rgba(0,0,0,.35);
-      --shadow-soft:0 8px 24px rgba(0,0,0,.22);
-      --radius:18px;
-      --radius-sm:12px;
-      --max:1120px;
-      --font-display:"Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-      --font-body:"Inter", ui-sans-serif, system-ui, sans-serif;
-      --font-mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-    }
-    [data-theme="light"]{
-      --bg:#f4f8f7;
-      --bg-soft:#ecf3f1;
-      --surface:#ffffff;
-      --surface-2:#f4f9f7;
-      --text:#0e1a19;
-      --muted:#5b7170;
-      --line:#d9e5e2;
-      --brand:#0e8f72;
-      --brand-2:#2470b8;
-      --sev-high:#c9372c;
-      --sev-med:#a97812;
-      --sev-ok:#0e8f72;
-      --shadow:0 18px 40px rgba(10,25,30,.10);
-      --shadow-soft:0 8px 20px rgba(10,25,30,.06);
-    }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: "Public Sans", system-ui, sans-serif;
+  font-size: 1.0625rem; line-height: 1.6;
+}
+a { color: var(--link); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 2px; }
+code, .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.86em; }
+code { background: var(--code-bg); padding: 0.1em 0.35em; border-radius: 4px; }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      color:var(--text);
-      background:
-        radial-gradient(circle at 12% -4%, color-mix(in srgb, var(--brand) 10%, transparent), transparent 30%),
-        radial-gradient(circle at 100% 8%, color-mix(in srgb, var(--brand-2) 9%, transparent), transparent 26%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
-      font:16px/1.65 var(--font-body);
-    }
-    h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em}
-    a{color:var(--brand);text-decoration:none}
-    a:hover,a:focus-visible{text-decoration:underline}
-    img{max-width:100%;display:block}
-    button{font:inherit;cursor:pointer}
-    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
-    .muted{color:var(--muted)}
-    .mono{font-family:var(--font-mono)}
-    .section{padding:40px 0;scroll-margin-top:78px}
-    .panel{
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow-soft);
-    }
-    [data-theme="light"] .panel{background:var(--surface)}
-    .grid{display:grid;gap:16px}
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+.measure { max-width: 68ch; }
 
-    .skip{position:absolute;left:-9999px}
-    .skip:focus{left:16px;top:16px;z-index:200;padding:10px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--line)}
+/* header */
+.top { border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; flex-wrap: wrap; }
+.brand { font-weight: 800; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.top nav { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+.top nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
+.top nav a:hover { color: var(--ink); }
+.theme-btn {
+  font: inherit; font-size: 0.9rem; color: var(--muted); background: none;
+  border: 1px solid var(--line); border-radius: 6px; padding: 4px 10px; cursor: pointer;
+}
+.theme-btn:hover { color: var(--ink); border-color: var(--muted); }
 
-    /* ---------- Header ---------- */
-    header{
-      position:sticky;top:0;z-index:100;
-      backdrop-filter:blur(14px);
-      background:color-mix(in srgb, var(--bg) 84%, transparent);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 0;position:relative}
-    .brand{display:flex;gap:11px;align-items:center;min-width:0}
-    .logo{
-      width:36px;height:36px;border-radius:11px;flex:0 0 auto;
-      display:grid;place-items:center;color:#04110d;font-family:var(--font-mono);font-weight:600;font-size:13px;
-      background:linear-gradient(135deg, var(--brand), var(--brand-2));
-      box-shadow:var(--shadow-soft);
-    }
-    .brand-text strong{display:block;font-size:14.5px;font-family:var(--font-display)}
-    .brand-text span{display:block;font-size:11.5px;color:var(--muted);font-family:var(--font-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .nav-right{display:flex;gap:8px;align-items:center}
-    .nav-links{display:flex;gap:6px;flex-wrap:wrap}
-    .chip{
-      padding:7px 11px;border:1px solid transparent;border-radius:999px;
-      color:var(--muted);font-size:13.5px;transition:.18s ease;
-    }
-    .chip:hover,.chip:focus-visible{color:var(--text);border-color:var(--line);text-decoration:none}
-    .icon-btn,.menu{
-      display:inline-flex;align-items:center;justify-content:center;
-      min-width:38px;min-height:38px;padding:6px 10px;border-radius:11px;
-      border:1px solid var(--line);background:var(--surface);color:var(--text);
-    }
-    .menu{display:none}
+/* hero */
+.hero { padding: 72px 0 40px; }
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4.25rem); line-height: 1.02; letter-spacing: -0.035em;
+  font-weight: 800; margin: 0 0 20px; max-width: 16ch;
+}
+.hero .role { font-size: 1.25rem; color: var(--muted); margin: 0 0 28px; max-width: 52ch; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.98rem;
+  padding: 10px 18px; border-radius: 6px; border: 1px solid var(--ink);
+}
+.btn.primary { background: var(--ink); color: var(--paper); }
+.btn.secondary { color: var(--ink); }
+.btn:hover { text-decoration: none; opacity: 0.88; }
+.where { margin-top: 20px; color: var(--muted); font-size: 0.95rem; }
 
-    @media (max-width:900px){
-      .menu{display:inline-flex}
-      .nav-links{
-        display:none;position:absolute;left:0;right:0;top:60px;flex-direction:column;background:var(--surface);
-        border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:var(--shadow);
-      }
-      .nav-links.open{display:flex}
-      .nav-links a{text-align:center}
-    }
+/* case trace: the signature element */
+.case { margin: 56px 0 24px; }
+.case h2 { font-size: 1.6rem; letter-spacing: -0.02em; margin: 0 0 8px; line-height: 1.2; max-width: 34ch; }
+.case > p { color: var(--muted); margin: 0 0 28px; }
+.trace { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); overflow: hidden; }
+.trace li { padding: 18px 16px 20px; border-right: 1px solid var(--line); position: relative; }
+.trace li:last-child { border-right: 0; }
+.trace .stage { font-size: 0.82rem; color: var(--muted); margin: 0 0 4px; }
+.trace .tool { font-weight: 700; margin: 0 0 10px; font-size: 1.02rem; line-height: 1.3; }
+.trace .what { font-size: 0.93rem; margin: 0; line-height: 1.5; }
+.trace li.hot { background: var(--signal-bg); }
+.trace li.hot .stage { color: var(--signal); font-weight: 600; }
+.trace li.safe { background: var(--ok-bg); }
+.trace li.safe .stage { color: var(--ok); font-weight: 600; }
+.trace li:not(:last-child)::after {
+  content: ""; position: absolute; right: -7px; top: 26px; width: 12px; height: 12px;
+  background: var(--surface); border-top: 1px solid var(--line); border-right: 1px solid var(--line);
+  transform: rotate(45deg); z-index: 1;
+}
+.trace li.hot:not(:last-child)::after { background: var(--signal-bg); }
+.trace li.safe:not(:last-child)::after { background: var(--ok-bg); }
+.case .outcome { margin-top: 18px; font-size: 0.98rem; }
 
-    /* ---------- Hero ---------- */
-    .hero{padding:60px 0 22px;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:9px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);
-      color:var(--muted);background:rgba(255,255,255,.03);font-size:13px;font-family:var(--font-mono);margin-bottom:16px;
-    }
-    .eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--sev-ok);box-shadow:0 0 0 5px color-mix(in srgb, var(--sev-ok) 15%, transparent)}
-    .hero h1{margin:0 0 14px;font-size:clamp(33px, 5.6vw, 56px);line-height:1.05;max-width:14ch}
-    .hero h1 em{font-style:normal;color:var(--brand)}
-    .hero p.lead{margin:0 0 16px;color:var(--muted);font-size:clamp(16px, 2vw, 18px);max-width:56ch}
-    .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 22px}
-    .tag{
-      border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:999px;
-      padding:6px 11px;font-size:12.5px;font-family:var(--font-mono);color:var(--text);
-    }
-    .cta{display:flex;flex-wrap:wrap;gap:11px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      min-height:45px;padding:10px 16px;border-radius:13px;border:1px solid var(--line);
-      background:var(--surface);color:var(--text);font-weight:600;box-shadow:var(--shadow-soft);transition:.18s ease;
-    }
-    .btn:hover,.btn:focus-visible{transform:translateY(-1px);text-decoration:none;border-color:color-mix(in srgb, var(--brand) 45%, var(--line))}
-    .btn.primary{background:linear-gradient(135deg, color-mix(in srgb, var(--brand) 20%, var(--surface)), color-mix(in srgb, var(--brand-2) 20%, var(--surface)))}
+/* sections */
+section.block { padding: 64px 0; border-top: 1px solid var(--line); }
+section.block h2 { font-size: 2rem; letter-spacing: -0.025em; line-height: 1.15; margin: 0 0 12px; }
+section.block .lede { color: var(--muted); margin: 0 0 32px; font-size: 1.08rem; }
+h3 { font-size: 1.15rem; margin: 0 0 6px; letter-spacing: -0.01em; line-height: 1.3; }
 
-    /* Signature: SOC log feed */
-    .term{overflow:hidden;font-family:var(--font-mono);font-size:13px}
-    .term-bar{
-      display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--line);
-      color:var(--muted);background:rgba(255,255,255,.02);
-    }
-    .term-bar .dots{display:flex;gap:6px}
-    .term-bar .dots i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block}
-    .term-body{padding:16px 16px 18px;display:grid;gap:9px;min-height:238px;align-content:start}
-    .log{display:flex;gap:10px;align-items:baseline;opacity:0;transform:translateY(4px);transition:opacity .4s ease, transform .4s ease}
-    .log.show{opacity:1;transform:none}
-    .log .t{color:var(--muted);flex:0 0 auto}
-    .log .sev{flex:0 0 auto;font-weight:500;padding:1px 7px;border-radius:6px;font-size:11.5px}
-    .sev.high{color:var(--sev-high);background:color-mix(in srgb, var(--sev-high) 14%, transparent)}
-    .sev.med{color:var(--sev-med);background:color-mix(in srgb, var(--sev-med) 14%, transparent)}
-    .sev.ok{color:var(--sev-ok);background:color-mix(in srgb, var(--sev-ok) 14%, transparent)}
-    .log .msg{color:var(--text)}
-    .term-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:0 16px 16px}
-    .stat{background:var(--surface-2);border:1px solid var(--line);border-radius:13px;padding:12px}
-    .stat strong{display:block;font-family:var(--font-display);font-size:21px;line-height:1.1;margin-bottom:3px}
-    .stat span{display:block;color:var(--muted);font-size:12px}
+/* lab */
+.lab-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; }
+.lab-list { margin: 0; padding-left: 1.1em; }
+.lab-list li { margin-bottom: 12px; }
+.stack { margin-top: 24px; color: var(--muted); font-size: 0.95rem; }
+table.attack { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+table.attack caption { text-align: left; font-weight: 700; padding: 0 0 10px; font-size: 1.02rem; }
+table.attack th, table.attack td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.attack th { font-weight: 600; color: var(--muted); font-size: 0.86rem; background: var(--paper); }
+table.attack tr:last-child td { border-bottom: 0; }
+table.attack td.id { font-family: "JetBrains Mono", monospace; font-size: 0.85rem; white-space: nowrap; }
+.table-note { font-size: 0.9rem; color: var(--muted); margin-top: 12px; }
 
-    @media (max-width:920px){.hero{grid-template-columns:1fr}.hero h1{max-width:none}}
+/* timeline */
+.timeline { margin: 0; padding: 0; list-style: none; }
+.timeline > li { display: grid; grid-template-columns: 170px 1fr; gap: 28px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+.timeline > li:first-child { padding-top: 0; }
+.timeline > li:last-child { border-bottom: 0; }
+.when { color: var(--muted); font-size: 0.95rem; padding-top: 2px; font-variant-numeric: tabular-nums; }
+.org { color: var(--muted); margin: 0 0 10px; }
+.timeline ul { margin: 0; padding-left: 1.1em; }
+.timeline ul li { margin-bottom: 6px; }
+.earlier { margin-top: 28px; }
+.earlier summary { cursor: pointer; font-weight: 600; color: var(--link); }
+.earlier[open] summary { margin-bottom: 8px; }
 
-    /* ---------- Section heads ---------- */
-    .section-head{display:flex;align-items:center;gap:14px;margin:0 0 18px}
-    .section-head h2{
-      margin:0;font-size:13px;letter-spacing:.1em;text-transform:lowercase;
-      color:var(--brand);font-family:var(--font-mono);font-weight:500;
-    }
-    .section-head h2::before{content:"~/";color:var(--muted)}
-    .section-head .line{height:1px;flex:1;background:linear-gradient(90deg, var(--line), transparent)}
+/* research */
+.pubs { list-style: none; margin: 0; padding: 0; }
+.pubs li { padding: 18px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 170px 1fr; gap: 28px; }
+.pubs li:last-child { border-bottom: 0; }
+.venue { color: var(--muted); font-size: 0.95rem; }
+.pubs h3 { font-weight: 600; font-size: 1.05rem; }
+.pubs p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
+.plain { margin: 0; padding-left: 1.1em; }
+.plain li { margin-bottom: 8px; }
 
-    /* ---------- About ---------- */
-    .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
-    .card{padding:20px}
-    .card h3{margin:0 0 10px;font-size:19px}
-    .card p{margin:0;color:var(--muted)}
-    .checklist{margin:0;padding-left:18px;color:var(--muted)}
-    .checklist li+li{margin-top:8px}
-    @media (max-width:880px){.about-grid{grid-template-columns:1fr}}
+/* contact */
+.contact-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; max-width: 760px; }
+.contact-list li { padding: 14px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; }
+.contact-list span { color: var(--muted); }
+.contact-list a { overflow-wrap: anywhere; text-align: right; }
 
-    /* ---------- Skills ---------- */
-    .skill-cards{grid-template-columns:repeat(auto-fit,minmax(235px,1fr))}
-    .skill-cards .tag{margin:4px 4px 0 0;display:inline-block}
+footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); }
 
-    /* ---------- Experience ---------- */
-    .timeline{display:grid;gap:14px}
-    .timeline-item{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:20px}
-    .timeline-date{font-size:13px;color:var(--muted);font-family:var(--font-mono);white-space:nowrap}
-    .timeline-item h3{margin:0 0 5px;font-size:18px}
-    .timeline-item .role-meta{color:var(--muted);font-size:14px;margin-bottom:10px}
-    .timeline-item ul{margin:0;padding-left:18px;color:var(--muted)}
-    .timeline-item li+li{margin-top:7px}
-    @media (max-width:720px){.timeline-item{grid-template-columns:1fr;gap:6px}}
-
-    /* ---------- Featured lab ---------- */
-    .lab-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}
-    .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
-    .flow div{background:var(--surface-2);border:1px solid var(--line);border-radius:13px;padding:12px;text-align:center}
-    .flow strong{display:block;font-family:var(--font-mono);font-size:12.5px;color:var(--brand);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em}
-    .flow span{color:var(--muted);font-size:13px}
-    @media (max-width:880px){.lab-grid{grid-template-columns:1fr}}
-    @media (max-width:560px){.flow{grid-template-columns:1fr}}
-
-    /* ---------- Research ---------- */
-    .pub{display:grid;grid-template-columns:64px 1fr;gap:16px;padding:18px 20px;align-items:start}
-    .pub-venue{
-      font-family:var(--font-mono);font-size:12px;color:var(--brand);
-      border:1px solid color-mix(in srgb, var(--brand) 30%, var(--line));border-radius:9px;
-      padding:5px 0;text-align:center;
-    }
-    .pub h3{margin:0 0 4px;font-size:16.5px;font-family:var(--font-body);font-weight:600}
-    .pub p{margin:0;color:var(--muted);font-size:14px}
-    .award{display:flex;gap:12px;align-items:flex-start;padding:18px 20px}
-    .award .medal{font-size:22px;line-height:1.2}
-    .award p{margin:2px 0 0;color:var(--muted);font-size:14px}
-    .award h3{margin:0;font-size:16.5px;font-family:var(--font-body);font-weight:600}
-
-    /* ---------- Projects ---------- */
-    .project-cards{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-    .project{display:flex;flex-direction:column;gap:10px;padding:20px}
-    .project .kicker{font-family:var(--font-mono);font-size:11.5px;color:var(--brand);text-transform:uppercase;letter-spacing:.08em}
-    .project h3{margin:0;font-size:18px}
-    .project p{margin:0;color:var(--muted);flex:1}
-    .project .tags{display:flex;flex-wrap:wrap;gap:6px}
-    .project .tags .tag{font-size:11.5px;padding:4px 9px}
-    .project a.more{font-size:14px;font-weight:600}
-
-    /* ---------- Education ---------- */
-    .edu-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-    .edu{padding:20px}
-    .edu .when{font-family:var(--font-mono);font-size:12.5px;color:var(--muted);margin-bottom:8px}
-    .edu h3{margin:0 0 5px;font-size:16.5px}
-    .edu p{margin:0;color:var(--muted);font-size:14px}
-    .certs{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
-    .cert{
-      display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;
-      padding:8px 14px;font-size:13.5px;background:rgba(255,255,255,.02);
-    }
-    .cert::before{content:"✓";color:var(--sev-ok);font-weight:700}
-
-    /* ---------- Contact ---------- */
-    .contact-grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-    .contact-card{padding:18px 20px}
-    .contact-card .label{font-family:var(--font-mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
-    .contact-card a,.contact-card span.val{display:block;font-size:15px;word-break:break-word}
-
-    footer{border-top:1px solid var(--line);margin-top:30px;padding:26px 0 40px;color:var(--muted);font-size:14px}
-    .foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
-
-    @media (prefers-reduced-motion: reduce){
-      html{scroll-behavior:auto}
-      .log{opacity:1;transform:none;transition:none}
-      .btn:hover{transform:none}
-    }
-  </style>
+@media (max-width: 860px) {
+  .trace { grid-template-columns: 1fr; }
+  .trace li { border-right: 0; border-bottom: 1px solid var(--line); }
+  .trace li:last-child { border-bottom: 0; }
+  .trace li:not(:last-child)::after { right: auto; left: 26px; top: auto; bottom: -7px; transform: rotate(135deg); }
+  .lab-grid, .split { grid-template-columns: 1fr; gap: 36px; }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding: 44px 0 24px; }
+  .timeline > li, .pubs li { grid-template-columns: 1fr; gap: 6px; }
+  .contact-list { grid-template-columns: 1fr; }
+  .top nav { gap: 14px; }
+  .top nav a.hide-sm { display: none; }
+  section.block { padding: 48px 0; }
+  table.attack th, table.attack td { padding: 9px 10px; }
+}
+</style>
 </head>
+<body>
 
-<body id="top">
-  <a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Trevor Henry Chiboora</a>
+    <nav aria-label="Sections">
+      <a href="#lab">Lab</a>
+      <a href="#experience">Experience</a>
+      <a href="#research" class="hide-sm">Research</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-btn" type="button" id="themeBtn" aria-label="Switch colour theme">Dark</button>
+    </nav>
+  </div>
+</header>
 
-  <header>
-    <div class="container nav" id="topnav">
-      <a class="brand" href="#top" aria-label="Home">
-        <span class="logo" aria-hidden="true">tc</span>
-        <span class="brand-text">
-          <strong>Trevor Henry Chiboora</strong>
-          <span>security · detection · soc · vapt</span>
-        </span>
-      </a>
-      <nav class="nav-right" aria-label="Primary">
-        <div class="nav-links" id="navLinks">
-          <a class="chip" href="#about">About</a>
-          <a class="chip" href="#skills">Skills</a>
-          <a class="chip" href="#experience">Experience</a>
-          <a class="chip" href="#lab">Lab</a>
-          <a class="chip" href="#research">Research</a>
-          <a class="chip" href="#projects">Projects</a>
-          <a class="chip" href="#education">Education</a>
-          <a class="chip" href="#contact">Contact</a>
-        </div>
-        <button class="icon-btn" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">◐</button>
-        <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
-      </nav>
-    </div>
-  </header>
+<main id="top">
+  <div class="wrap">
 
-  <main id="main">
-    <!-- ================= HERO ================= -->
-    <section class="container hero">
-      <div class="hero-copy">
-        <span class="eyebrow"><span class="eyebrow-dot"></span>open to security engineer · soc · detection · vapt roles</span>
-        <h1>I build labs, detections, and automations that <em>improve real defenses</em>.</h1>
-        <p class="lead">
-          I'm Trevor — a security engineer working across SOC operations, detection engineering,
-          vulnerability assessment, and security automation. I like turning security work into systems
-          that are practical, measurable, and useful to defenders.
-        </p>
-        <div class="hero-tags">
-          <span class="tag">Detection Engineering</span>
-          <span class="tag">SOC Operations</span>
-          <span class="tag">VAPT</span>
-          <span class="tag">Threat Intel</span>
-          <span class="tag">Python · Bash</span>
-          <span class="tag">Mobile & Web Security</span>
-        </div>
-        <div class="cta">
-          <a class="btn primary" href="#lab">View Featured Lab</a>
-          <a class="btn" href="#research">Publications</a>
-          <a class="btn" href="assets/Trevor_H_Chiboora_Resume.pdf" download>Download Resume</a>
-        </div>
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Security engineer. I build detections and test the tools that triage them.</h1>
+      <p class="role">Detection engineering, SOC operations and VAPT. Formerly Cybersecurity Research Engineer at the Upanzi Network, Carnegie Mellon University Africa, where I built and ran honeynets, monitored research infrastructure and tested digital public infrastructure.</p>
+      <div class="actions">
+        <a class="btn primary" href="assets/Trevor_H_Chiboora_Resume.pdf">Download resume (PDF)</a>
+        <a class="btn secondary" href="https://github.com/tchiboor/cybersecurity-soc-homelab">See the lab on GitHub</a>
       </div>
-
-      <div class="panel term" aria-label="Simulated detection timeline">
-        <div class="term-bar">
-          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span>soc-feed — attack &amp; detect lab</span>
-        </div>
-        <div class="term-body" id="logFeed">
-          <div class="log"><span class="t">10:02:14</span><span class="sev high">HIGH</span><span class="msg">Suricata: lateral movement attempt — SMB, kali → dc01</span></div>
-          <div class="log"><span class="t">10:02:15</span><span class="sev med">ALERT</span><span class="msg">Elastic rule fired: credential access on AD host</span></div>
-          <div class="log"><span class="t">10:04:31</span><span class="sev med">TRIAGE</span><span class="msg">Zeek logs correlated · MISP enrichment matched IOC</span></div>
-          <div class="log"><span class="t">10:11:47</span><span class="sev ok">TUNED</span><span class="msg">Detection updated — false-positive rate reduced</span></div>
-          <div class="log"><span class="t">10:15:03</span><span class="sev ok">HARDENED</span><span class="msg">pfSense + host policy updated · finding documented</span></div>
-        </div>
-        <div class="term-stats">
-          <div class="stat"><strong>200+</strong><span>Android apps analyzed for security research</span></div>
-          <div class="stat"><strong>3</strong><span>Published papers — ACM, IEEE, Approov</span></div>
-          <div class="stat"><strong>500+</strong><span>Users supported in enterprise IT operations</span></div>
-          <div class="stat"><strong>SOC</strong><span>Elastic · Security Onion · Suricata · Zeek · MISP</span></div>
-        </div>
-      </div>
+      <p class="where">Based in Newark, NJ. Relocating to Kigali, available from January 2027. Open to remote roles. MS Cybersecurity &amp; Privacy, NJIT, December 2026.</p>
     </section>
 
-    <!-- ================= ABOUT ================= -->
-    <section class="container section" id="about">
-      <div class="section-head"><h2>about</h2><span class="line"></span></div>
-      <div class="about-grid">
-        <div class="panel card">
-          <h3>Security work with both offensive and defensive depth</h3>
-          <p>
-            My work spans vulnerability assessment, SOC analysis, threat monitoring, security research,
-            malware triage, and automation. I'm especially interested in building security environments that let me
-            test assumptions, validate detections, understand attacker behavior, and improve defensive response.
-            Currently pursuing an MS in Cybersecurity &amp; Privacy at NJIT, building on an MSIT from Carnegie Mellon.
-          </p>
-        </div>
-        <div class="panel card">
-          <h3>What I bring</h3>
-          <ul class="checklist">
-            <li>Practical experience across detection, validation, and hardening</li>
-            <li>Published security research (ACM, IEEE) and AfricaCERT-recognized honeynet work</li>
-            <li>Strong lab-building mindset with real tooling and documentation</li>
-            <li>Automation of repetitive security tasks with Python and Bash</li>
-          </ul>
-        </div>
-      </div>
+    <section class="case" aria-labelledby="case-title">
+      <h2 id="case-title">What happens when an attacker writes instructions into an SSH username?</h2>
+      <p class="measure">My lab's AI triage agent reads attacker-controlled alert fields. So I attacked it. The first version didn't pass. Here is the pipeline, and where it is defended.</p>
+      <ol class="trace">
+        <li>
+          <p class="stage">Attack</p>
+          <p class="tool">Kali + Hydra</p>
+          <p class="what">SSH brute force against an Ubuntu target, ending in a successful login.</p>
+        </li>
+        <li>
+          <p class="stage">Detection</p>
+          <p class="tool">Wazuh rule 100101</p>
+          <p class="what">Five or more failed SSH logins, then a success from the same IP within 120 seconds. Fires at level 12.</p>
+        </li>
+        <li class="hot">
+          <p class="stage">Untrusted input</p>
+          <p class="tool">Crafted alerts</p>
+          <p class="what">Adversarial alert samples hide instructions in the username, source IP and log message fields.</p>
+        </li>
+        <li class="hot">
+          <p class="stage">Model reads it</p>
+          <p class="tool">Local LLM agent</p>
+          <p class="what">qwen3:4b on Ollama, offline. It advises only: it cannot block IPs, disable accounts or change severity.</p>
+        </li>
+        <li class="safe">
+          <p class="stage">Contained</p>
+          <p class="tool">Python guardrails</p>
+          <p class="what">Severity computed in code. An injection tripwire and a recommendation sanitiser catch what the model lets through.</p>
+        </li>
+      </ol>
+      <p class="outcome measure">The injection never downgraded a level-12 alert. My first test run against three OWASP LLM risk categories still exposed two gaps: a schema-manipulation attempt went undetected, and a prompt-extraction attempt leaked into a recommendation. Both are fixed and covered by regression tests in GitHub Actions. <a href="https://chiboorat.medium.com/the-model-was-never-the-security-control-91a74fb2ca64">Read the write-up</a>.</p>
     </section>
 
-    <!-- ================= SKILLS ================= -->
-    <section class="container section" id="skills">
-      <div class="section-head"><h2>skills</h2><span class="line"></span></div>
-      <div class="grid skill-cards">
-        <div class="panel card">
-          <h3>Security Operations</h3>
-          <span class="tag">SOC Monitoring</span><span class="tag">Incident Response</span><span class="tag">Alert Triage</span><span class="tag">Threat Hunting</span><span class="tag">Malware Analysis</span>
-        </div>
-        <div class="panel card">
-          <h3>Offensive Security</h3>
-          <span class="tag">VAPT</span><span class="tag">Web App Testing</span><span class="tag">Mobile Security</span><span class="tag">Burp Suite</span><span class="tag">Nmap</span><span class="tag">Nuclei</span>
-        </div>
-        <div class="panel card">
-          <h3>Detection & Tooling</h3>
-          <span class="tag">Elastic Security</span><span class="tag">Security Onion</span><span class="tag">Suricata</span><span class="tag">Zeek</span><span class="tag">MISP</span><span class="tag">Honeypots</span>
-        </div>
-        <div class="panel card">
-          <h3>Infrastructure & Automation</h3>
-          <span class="tag">Python</span><span class="tag">Bash</span><span class="tag">Proxmox</span><span class="tag">pfSense</span><span class="tag">Active Directory</span><span class="tag">System Hardening</span>
-        </div>
-      </div>
-    </section>
+  </div>
 
-    <!-- ================= EXPERIENCE ================= -->
-    <section class="container section" id="experience">
-      <div class="section-head"><h2>experience</h2><span class="line"></span></div>
-      <div class="timeline">
-        <div class="panel timeline-item">
-          <div class="timeline-date">Jan 2023 – Aug 2025</div>
-          <div>
-            <h3>Research Associate — Upanzi Network / CyLab-Africa</h3>
-            <div class="role-meta">Kigali → Newark</div>
-            <ul>
-              <li>Monitored and triaged security alerts in SOC-style environments using Elastic Security and Security Onion.</li>
-              <li>Automated security testing and log analysis workflows with Python and Bash, improving repeatability and reducing manual effort.</li>
-              <li>Deployed and integrated security tooling including MISP, ELK, and Suricata for visibility and enrichment.</li>
-              <li>Analyzed 200+ Android applications and co-authored published research on mobile security and African cyber risk.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="panel timeline-item">
-          <div class="timeline-date">Mar 2019 – Jun 2021</div>
-          <div>
-            <h3>Teaching Assistant — Harare Institute of Technology</h3>
-            <div class="role-meta">Harare, Zimbabwe</div>
-            <ul>
-              <li>Prepared lab exercises, assignments, and technical materials for IT and cybersecurity courses.</li>
-              <li>Supervised student projects, leading a group to a Distinction on their final project.</li>
-              <li>Helped coordinate practical sessions, reviews, and assessments.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="panel timeline-item">
-          <div class="timeline-date">Sep 2017 – Jul 2018</div>
-          <div>
-            <h3>IT Officer — ZIMASCO Pvt. Ltd.</h3>
-            <div class="role-meta">Zimbabwe</div>
-            <ul>
-              <li>Provided Tier II IT and endpoint support for 500+ enterprise users.</li>
-              <li>Supported network troubleshooting, endpoint hardening, system administration, and IS-policy audits.</li>
-              <li>Helped maintain operational stability across enterprise systems.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="panel timeline-item">
-          <div class="timeline-date">Aug 2015 – Aug 2016</div>
-          <div>
-            <h3>IT Intern — ZIMASCO Pvt. Ltd.</h3>
-            <div class="role-meta">Zimbabwe</div>
-            <ul>
-              <li>Provided helpdesk support, logged incidents, and resolved system issues.</li>
-              <li>Assisted with network configuration and system administration.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= FEATURED LAB ================= -->
-    <section class="container section" id="lab">
-      <div class="section-head"><h2>featured-lab</h2><span class="line"></span></div>
+  <section class="block" id="lab" aria-labelledby="lab-title">
+    <div class="wrap">
+      <h2 id="lab-title">The SOC homelab</h2>
+      <p class="lede measure">A segmented attack-and-detect environment I built to reproduce real techniques, check whether my detections actually fire, and write up the gaps honestly.</p>
       <div class="lab-grid">
-        <div class="panel card">
-          <h3>Attack &amp; Detect Home Lab</h3>
-          <p>
-            A hands-on Proxmox environment for simulating attacks, testing detections, monitoring logs, and validating
-            hardening decisions — built to show how offensive actions can be observed and improved from the defensive side.
-          </p>
-          <div class="flow">
-            <div><strong>Attack</strong><span>Kali / test systems</span></div>
-            <div><strong>Control</strong><span>AD · pfSense · Proxmox</span></div>
-            <div><strong>Detect</strong><span>Security Onion · Elastic</span></div>
-          </div>
-          <div class="cta">
-            <a class="btn primary" href="https://github.com/tchiboor" target="_blank" rel="noopener">View on GitHub</a>
-          </div>
+        <div>
+          <ul class="lab-list">
+            <li>Proxmox host with segmented security zones routed through OPNsense, keeping attack tooling separate from monitored targets.</li>
+            <li>Suricata and Wazuh caught the same Hydra brute force from two angles: the network and the host.</li>
+            <li>Custom rule <code>100101</code> was validated against real log lines with <code>wazuh-logtest</code> before it was trusted.</li>
+            <li>Findings are labelled observed or detected. A technique counts as covered only when an alert fires, not when traffic merely shows up in a log.</li>
+            <li>The local LLM triage agent runs offline, at zero marginal cost, with no data leaving the network. It is built for under-resourced SOCs.</li>
+          </ul>
+          <p class="stack">Proxmox, OPNsense, Suricata, Wazuh, Kali, Hydra, Nmap, Nikto, Python, Ollama, pytest, GitHub Actions</p>
         </div>
-        <div class="panel card">
-          <h3>Why it matters</h3>
-          <ul class="checklist">
-            <li>Simulates realistic attack-and-detect workflows end to end</li>
-            <li>Supports Active Directory, network monitoring, threat visibility, and hardening practice</li>
-            <li>Combines pfSense, Security Onion, Elastic, Suricata, Zeek, and MISP</li>
-            <li>Documented for demonstrations, case studies, and writeups</li>
+        <div>
+          <table class="attack">
+            <caption>ATT&amp;CK techniques exercised</caption>
+            <thead><tr><th scope="col">Technique</th><th scope="col">Name</th><th scope="col">Exercised with</th></tr></thead>
+            <tbody>
+              <tr><td class="id">T1046</td><td>Network Service Discovery</td><td>Nmap</td></tr>
+              <tr><td class="id">T1595.002</td><td>Vulnerability Scanning</td><td>Nikto</td></tr>
+              <tr><td class="id">T1110</td><td>Brute Force</td><td>Hydra over SSH</td></tr>
+              <tr><td class="id">T1110.001</td><td>Password Guessing</td><td>Hydra over SSH, rule 100101</td></tr>
+              <tr><td class="id">T1078</td><td>Valid Accounts</td><td>Login after guessing, rule 100101</td></tr>
+            </tbody>
+          </table>
+          <p class="table-note">Detection status for each technique is in the <a href="https://github.com/tchiboor/cybersecurity-soc-homelab">repo's coverage analysis</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="experience" aria-labelledby="exp-title">
+    <div class="wrap">
+      <h2 id="exp-title">Experience</h2>
+      <p class="lede measure">Security research and operations in Kigali and with a UK mobile-security company, built on earlier IT operations and teaching roles.</p>
+      <ol class="timeline" reversed>
+        <li>
+          <div class="when">Jan 2025 – Aug 2025</div>
+          <div>
+            <h3>Cybersecurity Research Engineer</h3>
+            <p class="org">The Upanzi Network, Carnegie Mellon University Africa, Kigali</p>
+            <ul>
+              <li>Designed, deployed, operated and analysed internet-facing honeypots (Cowrie, OpenCanary) for the MIMON and ATCHEDJI projects over about a year. Captured malware samples, attacker commands, source IPs and locations, credential pairs and attack trends, and fed indicators to ELK dashboards and MISP.</li>
+              <li>Received an individual AfricaCERT Recognition and Appreciation Award for the honeypot work (2024).</li>
+              <li>Ran full-cycle penetration tests on web apps, APIs and Linux servers, including external applications: testing, formal reports, walkthroughs with system owners, remediation tracking and retesting. Typical findings: misconfigurations, default credentials, outdated vulnerable versions and IDOR.</li>
+              <li>Deobfuscated attacker commands and analysed captured malware with CyberChef, online sandboxes and Ghidra.</li>
+              <li>Automated server hardening and rootkit scanning (every new server, and before each formal VAPT), assessment reconnaissance, log collection and agent deployment in Python and Bash. Wrote runbooks for deployment and hardening.</li>
+              <li>Mentored three interns and student project groups in the security lab.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="when">Jan 2023 – Dec 2024</div>
+          <div>
+            <h3>Research Associate</h3>
+            <p class="org">The Upanzi Network, Carnegie Mellon University Africa, Kigali</p>
+            <ul>
+              <li>Monitored 15+ servers across research, development and monitoring projects with Elastic Security, Security Onion and Suricata. Triaged alerts, ran threat hunts and escalated findings to project leads.</li>
+              <li>Deployed and maintained Elastic Defend EDR and Wazuh agents, and responded to endpoint alerts, including isolating a host on a malicious-download detection and releasing it once the file was verified as an authorised security tool.</li>
+              <li>Managed SSH keys, sudo rights and access reviews, and configured firewall rules, VPN access, network segmentation and server backups.</li>
+              <li>Co-authored an analysis of 224 financial Android apps from across Africa: 95% leaked secrets such as API keys, signing keys and payment-gateway credentials.</li>
+              <li>First author of an ACM COMPASS paper assessing 18 African mobile banking apps against OWASP MASVS. Presented it as an invited talk at the University of Washington.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="when">Jun 2023 – Sep 2023</div>
+          <div>
+            <h3>Mobile Application Security Research Intern</h3>
+            <p class="org">Approov Mobile Security, United Kingdom (remote)</p>
+            <ul>
+              <li>Tested financial Android apps against OWASP MASVS with static analysis (MobSF, jadx, apktool) and dynamic analysis (Frida, Objection, SSL-pinning bypass).</li>
+              <li>Co-authored "The Security Challenges of Financial Mobile Apps in Africa" and presented the findings in webinars.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="when">Jun 2022 – Aug 2022</div>
+          <div>
+            <h3>Cybersecurity Intern</h3>
+            <p class="org">The Upanzi Network, Carnegie Mellon University Africa, Kigali</p>
+            <ul><li>Ran security scans and tests, and set up lab environments and tooling.</li></ul>
+          </div>
+        </li>
+      </ol>
+      <details class="earlier">
+        <summary>Earlier: IT operations and teaching, 2015 – 2022</summary>
+        <ol class="timeline" reversed>
+          <li>
+            <div class="when">Sep 2021 – Jun 2022</div>
+            <div><h3>IT Support Specialist</h3><p class="org">Carnegie Mellon University Africa, Kigali</p>
+            <ul><li>Supported 100+ staff and students across hardware, software, network and AV, and wrote troubleshooting guides.</li></ul></div>
+          </li>
+          <li>
+            <div class="when">Mar 2019 – Jun 2021</div>
+            <div><h3>Teaching Assistant</h3><p class="org">Harare Institute of Technology, Zimbabwe</p>
+            <ul><li>Taught labs and tutorials for IT courses, and supervised student projects. Two teams earned Distinctions.</li></ul></div>
+          </li>
+          <li>
+            <div class="when">Sep 2017 – Jul 2018</div>
+            <div><h3>ICT Officer</h3><p class="org">Zimasco, Kwekwe, Zimbabwe</p>
+            <ul><li>Tier II support for 500+ users. Active Directory, Windows Server, LAN/WAN, backups, endpoint antivirus and email filtering rules. Supported internal IT audits: evidence, fixes and policy compliance checks.</li></ul></div>
+          </li>
+          <li>
+            <div class="when">Aug 2015 – Aug 2016</div>
+            <div><h3>ICT Intern</h3><p class="org">Zimasco, Kwekwe, Zimbabwe</p>
+            <ul><li>Help desk, incident logging, system updates and asset tracking.</li></ul></div>
+          </li>
+        </ol>
+      </details>
+    </div>
+  </section>
+
+  <section class="block" id="research" aria-labelledby="res-title">
+    <div class="wrap">
+      <h2 id="res-title">Research and writing</h2>
+      <p class="lede measure">Peer-reviewed work on mobile financial security and web privacy in Africa, an industry report, and a public series on building and attacking an AI-assisted SOC.</p>
+      <ul class="pubs">
+        <li>
+          <div class="venue">ACM COMPASS, 2025</div>
+          <div><h3>Cookie Consent and Digital Privacy in Africa: An Analysis of Website Practices and Existing Regulatory Gaps</h3>
+          <p>Co-author. 1,793 websites across 49 countries: 78% set cookies, only 17% asked for consent, and none of 37 data protection laws set website cookie opt-in rules. <a href="https://engineering.cmu.edu/news-events/news/2025/08/01-clicking-away-consent.html">Coverage by CMU Engineering</a>.</p></div>
+        </li>
+        <li>
+          <div class="venue">Approov, 2023</div>
+          <div><h3>The Security Challenges of Financial Mobile Apps in Africa</h3>
+          <p>Co-author, industry report. 224 financial Android apps; 95% leaked secrets. <a href="https://approov.io/blog/approov-to-publish-carnegie-mellon-university-and-cylab-africa-report-on-mobile-app-security-in-africa">Report announcement</a>.</p></div>
+        </li>
+        <li>
+          <div class="venue">ACM COMPASS, 2023</div>
+          <div><h3>Evaluating Mobile Banking Application Security Posture Using the OWASP's MASVS Framework</h3>
+          <p>First author. 18 mobile banking apps from African financial institutions, compared by organisation size. <a href="https://doi.org/10.1145/3588001.3609367">doi.org/10.1145/3588001.3609367</a>. Invited talk at the <a href="https://change.washington.edu/talk/evaluating-mobile-banking-application-security-posture-using-the-owasps-masvs-framework">University of Washington Change Seminar</a>, February 2024.</p></div>
+        </li>
+        <!-- VERIFY: IEEE contact-tracing paper not found online. Add it back here only with a working link:
+        <li><div class="venue">IEEE, 2023</div><div><h3>Potential Privacy Violation in Manual Contact Tracing: A Rwanda Case Study</h3><p>…</p></div></li> -->
+      </ul>
+
+      <div class="split">
+        <div>
+          <h3>Lab write-ups on Medium</h3>
+          <ul class="plain">
+            <li><a href="https://chiboorat.medium.com/the-model-was-never-the-security-control-91a74fb2ca64">The Model Was Never the Security Control</a>, Sep 2026</li>
+            <li><a href="https://chiboorat.medium.com/i-tried-to-break-my-own-ai-soc-agent-and-the-first-version-didnt-pass-d77516f0c2e5">I Tried to Break My Own AI SOC Agent and the First Version Didn't Pass</a>, Aug 2026</li>
+            <li><a href="https://chiboorat.medium.com/attacking-my-own-ai-soc-agent-prompt-injection-in-a-wazuh-triage-pipeline-32f9f280e780">Attacking My Own AI SOC Agent: Prompt Injection in a Wazuh Triage Pipeline</a>, Aug 2026</li>
+            <li><a href="https://chiboorat.medium.com/from-siem-alerts-to-ai-assisted-triage-6c46d9859454">From SIEM Alerts to AI-Assisted Triage</a>, Aug 2026</li>
+            <li><a href="https://chiboorat.medium.com/from-nmap-to-siem-building-a-real-cybersecurity-detection-pipeline-35414bf817d5">From Nmap to SIEM: Building a Real Cybersecurity Detection Pipeline</a>, Mar 2026</li>
+            <li><a href="https://chiboorat.medium.com/building-a-cybersecurity-home-lab-installing-and-exposing-a-cowrie-honeypot-on-the-internet-part-1-8391f82c4312">Installing and Exposing a Cowrie Honeypot on the Internet</a>, Jan 2025</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Credentials</h3>
+          <ul class="plain">
+            <li>AfricaCERT Recognition and Appreciation Award, 2024</li>
+            <li>Cisco Certified CyberOps Associate</li>
+            <li>CompTIA PenTest+</li>
+            <li>ISC2 Certified in Cybersecurity</li>
+            <li>MS Cybersecurity &amp; Privacy, NJIT (December 2026)</li>
+            <!-- VERIFY: add specialization wording from transcript if wanted -->
+            <li>MS Information Technology, Carnegie Mellon University Africa (2023)</li>
+            <li>BTech Information Technology, First Class, Harare Institute of Technology (2017)</li>
           </ul>
         </div>
       </div>
-    </section>
-
-    <!-- ================= RESEARCH & RECOGNITION ================= -->
-    <section class="container section" id="research">
-      <div class="section-head"><h2>research</h2><span class="line"></span></div>
-      <div class="grid">
-        <div class="panel pub">
-          <div class="pub-venue">ACM<br>2023</div>
-          <div>
-            <h3>Evaluating Mobile Banking Application Security Posture Using the OWASP MASVS Framework</h3>
-            <p>Assessed the security posture of mobile banking apps against the OWASP MASVS standard.</p>
-          </div>
-        </div>
-        <div class="panel pub">
-          <div class="pub-venue">IEEE<br>2023</div>
-          <div>
-            <h3>Potential Privacy Violation in Manual Contact Tracing: A Rwanda Case Study</h3>
-            <p>Examined privacy risks in manual contact-tracing workflows using Rwanda as a case study.</p>
-          </div>
-        </div>
-        <div class="panel pub">
-          <div class="pub-venue">Approov<br>2023</div>
-          <div>
-            <h3>Security Challenges of Financial Mobile Apps in Africa</h3>
-            <p>Industry report on vulnerabilities and ecosystem risks across African financial mobile applications.</p>
-          </div>
-        </div>
-        <div class="panel award">
-          <div class="medal" aria-hidden="true">🏅</div>
-          <div>
-            <h3>AfricaCERT Recognition Award</h3>
-            <p>Recognized for honeynet design and deployment (MIMON &amp; ATCHEDJI projects), capturing real-world attacker activity and producing actionable threat intelligence.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PROJECTS ================= -->
-    <section class="container section" id="projects">
-      <div class="section-head"><h2>projects</h2><span class="line"></span></div>
-      <div class="grid project-cards">
-        <div class="panel project">
-          <span class="kicker">Threat Intel</span>
-          <h3>Honeynet Deployment</h3>
-          <p>Designed and deployed honeynet infrastructure for AfricaCERT that captured real attacker activity and generated actionable threat intelligence.</p>
-          <div class="tags"><span class="tag">Honeypots</span><span class="tag">Threat Intelligence</span><span class="tag">Monitoring</span></div>
-          <a class="more" href="https://github.com/tchiboor" target="_blank" rel="noopener">Code &amp; notes →</a>
-        </div>
-        <div class="panel project">
-          <span class="kicker">Automation</span>
-          <h3>Security Automation Scripts</h3>
-          <p>Python and Bash tooling for scan orchestration, enrichment, and reporting — reducing repetitive analyst work and making testing repeatable.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">Reporting</span></div>
-          <a class="more" href="https://github.com/tchiboor" target="_blank" rel="noopener">View work →</a>
-        </div>
-        <div class="panel project">
-          <span class="kicker">Research</span>
-          <h3>Android App Security Research</h3>
-          <p>Analyzed 200+ Android applications for security issues and ecosystem trends, contributing to a published security report.</p>
-          <div class="tags"><span class="tag">Android Security</span><span class="tag">Static Analysis</span><span class="tag">Research</span></div>
-          <a class="more" href="https://github.com/tchiboor" target="_blank" rel="noopener">Related notes →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= EDUCATION ================= -->
-    <section class="container section" id="education">
-      <div class="section-head"><h2>education</h2><span class="line"></span></div>
-      <div class="grid edu-grid">
-        <div class="panel edu">
-          <div class="when">2025 – present</div>
-          <h3>MS in Cybersecurity &amp; Privacy — NJIT</h3>
-          <p>New Jersey Institute of Technology, Newark, NJ.</p>
-        </div>
-        <div class="panel edu">
-          <div class="when">Fall 2021 – Spring 2023</div>
-          <h3>MS in Information Technology — Carnegie Mellon University</h3>
-          <p>Specialization in IT and Computer Networking (CMU-Africa).</p>
-        </div>
-        <div class="panel edu">
-          <div class="when">Aug 2013 – Jun 2017</div>
-          <h3>BTech in Information Technology — Harare Institute of Technology</h3>
-          <p>First-Class Honours (Distinction).</p>
-        </div>
-      </div>
-      <div class="certs">
-        <span class="cert">Cisco Certified CyberOps Associate</span>
-        <span class="cert">ISC2 Certified in Cybersecurity (CC)</span>
-        <span class="cert">CompTIA PenTest+</span>
-      </div>
-    </section>
-
-    <!-- ================= CONTACT ================= -->
-    <section class="container section" id="contact">
-      <div class="section-head"><h2>contact</h2><span class="line"></span></div>
-      <div class="grid contact-grid">
-        <div class="panel contact-card">
-          <div class="label">Email</div>
-          <a href="mailto:chiboorat@gmail.com">chiboorat@gmail.com</a>
-          <a href="mailto:thc4@njit.edu">thc4@njit.edu</a>
-        </div>
-        <div class="panel contact-card">
-          <div class="label">GitHub</div>
-          <a href="https://github.com/tchiboor" target="_blank" rel="noopener">github.com/tchiboor</a>
-        </div>
-        <div class="panel contact-card">
-          <div class="label">LinkedIn</div>
-          <a href="https://www.linkedin.com/in/tchiboor/" target="_blank" rel="noopener">linkedin.com/in/tchiboor</a>
-        </div>
-        <div class="panel contact-card">
-          <div class="label">Location</div>
-          <span class="val">Newark, NJ · Remote OK</span>
-        </div>
-      </div>
-      <div class="cta" style="margin-top:18px">
-        <a class="btn primary" href="mailto:chiboorat@gmail.com">Email Trevor</a>
-        <a class="btn" href="assets/Trevor_H_Chiboora_Resume.pdf" download>Download Resume</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container foot">
-      <span>© <span id="year"></span> Trevor Henry Chiboora</span>
-      <a class="chip" href="#top">Back to top ↑</a>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    // Mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-    menuBtn.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-    });
-    navLinks.addEventListener('click', e => {
-      if (e.target.tagName === 'A') { navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); }
-    });
+  <section class="block" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title">Contact</h2>
+      <p class="lede measure">Hiring for a SOC, detection engineering or security engineering role? Email is fastest.</p>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:chiboorat@gmail.com">chiboorat@gmail.com</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/tchiboor/">in/tchiboor</a></li>
+        <li><span>GitHub</span><a href="https://github.com/tchiboor">tchiboor</a></li>
+        <li><span>Writing</span><a href="https://chiboorat.medium.com/">chiboorat.medium.com</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
 
-    // Theme toggle (defaults to system preference, session-only)
-    const root = document.documentElement;
-    if (window.matchMedia('(prefers-color-scheme: light)').matches) root.dataset.theme = 'light';
-    document.getElementById('themeToggle').addEventListener('click', () => {
-      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    });
+<footer>
+  <div class="wrap">Trevor Henry Chiboora, 2026</div>
+</footer>
 
-    // Signature: staggered SOC log reveal (respects reduced motion via CSS)
-    const logs = document.querySelectorAll('#logFeed .log');
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    logs.forEach((l, i) => {
-      if (reduce) { l.classList.add('show'); }
-      else setTimeout(() => l.classList.add('show'), 500 + i * 800);
-    });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Portfolio section analytics
-   const trackedSections = new Set();
-
-   const analyticsObserver = new IntersectionObserver((entries) => {
-     entries.forEach(entry => {
-       if (
-       entry.isIntersecting &&
-       entry.intersectionRatio >= 0.25 &&
-       !trackedSections.has(entry.target.id)
-    ) {
-      trackedSections.add(entry.target.id);
-
-      if (typeof gtag === 'function') {
-        gtag('event', 'portfolio_section_view', {
-          section_name: entry.target.id
-        });
-      }
-    }
+<script>
+(function () {
+  var btn = document.getElementById('themeBtn');
+  var root = document.documentElement;
+  function current() {
+    var set = root.getAttribute('data-theme');
+    if (set) return set;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function label() { btn.textContent = current() === 'dark' ? 'Light' : 'Dark'; }
+  try { var saved = localStorage.getItem('theme'); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
+  label();
+  btn.addEventListener('click', function () {
+    var next = current() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    label();
   });
-}, {
-  threshold: 0.25
-});
-
-document.querySelectorAll(
-  '#about, #skills, #experience, #lab, #research, #projects, #education, #contact'
-).forEach(section => analyticsObserver.observe(section));
-
-document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-  link.addEventListener('click', () => {
-    if (typeof gtag === 'function') {
-      gtag('event', 'contact_click', {
-        contact_method: 'email',
-        link_text: link.textContent.trim()
-      });
-    }
-  });
-});
-  </script>
+})();
+</script>
 </body>
 </html>
