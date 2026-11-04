@@ -2,6 +2,28 @@ services:
   - type: static
     name: trevor-portfolio
     env: static
-    buildCommand: ""              # no build step for plain HTML
-    staticPublishPath: public     # serve from /public
+    buildCommand: ""
+    staticPublishPath: public
     pullRequestPreviewsEnabled: true
+    headers:
+      - path: /*
+        name: Content-Security-Policy
+        value: "default-src 'self'; script-src 'self' https://gc.zgo.at; connect-src 'self' https://tchiboor.goatcounter.com; img-src 'self' data: https://tchiboor.goatcounter.com; style-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+      - path: /*
+        name: Strict-Transport-Security
+        value: max-age=31536000; includeSubDomains
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: Permissions-Policy
+        value: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+      - path: /*
+        name: Cross-Origin-Opener-Policy
+        value: same-origin

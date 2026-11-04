@@ -1,23 +1,17 @@
 ### Trevor Henry Chiboora
 
-Security engineer working on detection engineering, SOC operations and VAPT, and on security testing of the AI tools that triage alerts. MS Cybersecurity & Privacy at NJIT (December 2026); previously Cybersecurity Research Engineer at the Upanzi Network, Carnegie Mellon University Africa.
+I secure systems and the personal data inside them. Security engineer and data protection researcher, formerly Cybersecurity Research Engineer at the Upanzi Network, Carnegie Mellon University Africa (Kigali). MS Cybersecurity & Privacy at NJIT, December 2026.
 
-**Current work:** [cybersecurity-soc-homelab](https://github.com/tchiboor/cybersecurity-soc-homelab). It's a Proxmox, OPNsense, Suricata and Wazuh lab with a custom correlation rule and an offline LLM triage agent. I red-teamed the agent against OWASP LLM risks. The first version failed two tests; both are now fixed and covered by CI regression tests. The write-up: [The Model Was Never the Security Control](https://chiboorat.medium.com/the-model-was-never-the-security-control-91a74fb2ca64).
+**Security work:** penetration testing of web apps, APIs and servers; monitoring 15+ servers with Elastic Security, Wazuh and Elastic Defend EDR; a year operating internet-facing honeypots, recognised with an individual AfricaCERT award (2024).
 
 **Research:**
 - First author, [Evaluating Mobile Banking Application Security Posture Using the OWASP's MASVS Framework](https://doi.org/10.1145/3588001.3609367) (ACM COMPASS '23).
 - Co-author of a [224-app study](https://approov.io/blog/approov-to-publish-carnegie-mellon-university-and-cylab-africa-report-on-mobile-app-security-in-africa) of African financial apps, in which 95% leaked secrets.
-- Co-author of an ACM COMPASS 2025 paper on cookie consent across African websites.
+- Co-author of an ACM COMPASS 2025 paper on cookie consent and data protection law across 49 African countries.
+- In progress: a measurement study of Rwandan websites against Rwanda's data protection law, Law N° 058/2021.
 
-**Recognition:** AfricaCERT Recognition and Appreciation Award (2024) for honeypot work on the MIMON and ATCHEDJI projects.
-
-**Certifications:** Cisco CyberOps Associate, CompTIA PenTest+, ISC2 Certified in Cybersecurity.
+**Lab:** [cybersecurity-soc-homelab](https://github.com/tchiboor/cybersecurity-soc-homelab), a Proxmox, OPNsense, Suricata and Wazuh lab with a custom detection rule and an offline AI triage agent that I red-teamed with prompt injection. Write-up: [The Model Was Never the Security Control](https://chiboorat.medium.com/the-model-was-never-the-security-control-91a74fb2ca64).
 
 [Portfolio](https://tchiboor.onrender.com/) | [LinkedIn](https://www.linkedin.com/in/tchiboor/) | [Writing](https://chiboorat.medium.com/) | chiboorat@gmail.com
 
-Relocating to Kigali, available from January 2027. Open to remote roles.
-
-<!--
-Site source: everything Render serves lives in public/ (see render.yaml).
-Before pushing: replace public/assets/Trevor_H_Chiboora_Resume.pdf with the updated resume (same file name).
--->
+Relocating to Kigali in December 2026. Open to on-site and remote roles.
