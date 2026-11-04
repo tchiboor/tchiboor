@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tchiboor.onrender.com/sitemap.xml
